@@ -3,7 +3,7 @@
 // 🎛️ EASY CONTROLS
 // ============================================
 const ANIMATION_CONFIG = {
-    scrollSpeed: 7.0,        // How fast pipe grows (1.0 = normal, 2.0 = 2x faster, 0.5 = slower)
+    scrollSpeed: 8.0,        // How fast pipe grows (1.0 = normal, 2.0 = 2x faster, 0.5 = slower)
     smoothness: 0.1          // Animation smoothness (0.1 = smooth, 0.5 = snappy)
 };
 // ============================================
