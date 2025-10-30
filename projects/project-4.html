@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AI Analytics Dashboard | Sahaj Gupta</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="../css/offbrand-2023.shared.ce8dbabc0.min.css" rel="stylesheet" type="text/css">
+  <link href="../images/685d84eae2d5de2856815021_ob-2025-favicon.png" rel="shortcut icon" type="image/x-icon">
+  
+  <style>
+    body {
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: linear-gradient(135deg, #cce6ff 0%, #e0f2ff 30%, #f5edff 55%, #fff2f8 80%, #fffafc 100%);
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    .project-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 24px;
+      border: 2px solid #1a1a1a;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      margin-bottom: 40px;
+    }
+    
+    .back-button:hover {
+      background: #1a1a1a;
+      color: #ffffff;
+      transform: translateX(-5px);
+    }
+    
+    .project-hero {
+      margin-bottom: 60px;
+      animation: slideUp 0.8s ease-out 0.2s both;
+    }
+    
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .project-title {
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 0 0 20px 0;
+      background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .project-meta {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      opacity: 0.7;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .project-description {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+    
+    .tech-stack {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .tech-tag {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #e0e0e0;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #333;
+      backdrop-filter: blur(10px);
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #1a1a1a;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .project-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .project-link.secondary {
+      background: transparent;
+      color: #1a1a1a;
+      border: 2px solid #1a1a1a;
+    }
+    
+    .project-media {
+      margin-bottom: 60px;
+      animation: slideUp 0.8s ease-out 0.4s both;
+    }
+    
+    .media-item {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 40px;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .placeholder-content {
+      text-align: center;
+      color: #999;
+    }
+    
+    .placeholder-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+    
+    .project-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+      animation: slideUp 0.8s ease-out 0.6s both;
+    }
+    
+    .detail-card {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .detail-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #666;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .detail-content {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .detail-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .detail-content li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .detail-content li:last-child {
+      border-bottom: none;
+    }
+    
+    @media (max-width: 768px) {
+      .project-container {
+        padding: 40px 20px;
+      }
+      
+      .project-meta {
+        gap: 15px;
+      }
+      
+      .project-links {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="project-container">
+    <a href="../index.html" class="back-button">
+      <span>←</span> Back to Portfolio
+    </a>
+    
+    <div class="project-hero">
+      <h1 class="project-title">AI Analytics Dashboard</h1>
+      
+      <div class="project-meta">
+        <span>🗓️ 2024</span>
+        <span>🎨 Data Visualization</span>
+        <span>👤 Personal Project</span>
+      </div>
+      
+      <p class="project-description">
+        An intelligent analytics platform powered by machine learning algorithms for real-time data 
+        insights. Features interactive dashboards, predictive analytics, and automated reporting 
+        capabilities for business intelligence.
+      </p>
+      
+      <div class="tech-stack">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">TensorFlow</span>
+        <span class="tech-tag">D3.js</span>
+        <span class="tech-tag">PostgreSQL</span>
+        <span class="tech-tag">Docker</span>
+      </div>
+      
+      <div class="project-links">
+        <a href="#" class="project-link">
+          View Live Demo →
+        </a>
+        <a href="https://github.com/sahaj24/" class="project-link secondary" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+    
+    <div class="project-media">
+      <div class="media-item">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">📊</div>
+          <p>Project Screenshot Coming Soon</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-details">
+      <div class="detail-card">
+        <h3 class="detail-title">The Challenge</h3>
+        <div class="detail-content">
+          Build a comprehensive analytics platform that processes large datasets in real-time, 
+          provides actionable insights through machine learning, and presents complex data in an 
+          intuitive, interactive interface for non-technical users.
+        </div>
+      </div>
+      
+      <div class="detail-card">
+        <h3 class="detail-title">The Solution</h3>
+        <div class="detail-content">
+          Developed a full-stack analytics platform with Python/TensorFlow backend for ML models, 
+          React frontend with D3.js for advanced data visualization, and PostgreSQL for efficient 
+          data storage and querying.
+        </div>
+      </div>
+      
+      <div class="detail-card">
+        <h3 class="detail-title">Key Features</h3>
+        <div class="detail-content">
+          <ul>
+            <li>✓ Real-time data processing & visualization</li>
+            <li>✓ Predictive analytics with ML models</li>
+            <li>✓ Interactive dashboards with D3.js</li>
+            <li>✓ Automated reporting system</li>
+            <li>✓ Custom metrics & KPI tracking</li>
+            <li>✓ Export to multiple formats</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="detail-card">
+        <h3 class="detail-title">What I Learned</h3>
+        <div class="detail-content">
+          Gained deep experience in data visualization libraries, machine learning model integration, 
+          and handling large-scale data processing. Learned optimization techniques for real-time 
+          analytics and creating intuitive UX for complex data interfaces.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
